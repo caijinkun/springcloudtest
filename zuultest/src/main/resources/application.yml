@@ -1,0 +1,17 @@
+server:
+  port: 5555
+spring:
+  application:
+    name: apt-gateway
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      service-id: compute-serviceA
+    api-b:
+      path: /api-b/**
+      service-id: compute-serviceB
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
